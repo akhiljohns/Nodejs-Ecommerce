@@ -1,0 +1,20 @@
+//1) MIDDLE WARES 
+=can be used to work out any functions during req, res obj
+app.use*(req,res,next){
+    // start
+    next 
+}
+app.get(req,res,next){
+    hehja
+    next
+}
+app.use(){
+    end
+}
+
+joutput:
+Start 
+hehja
+end
+
+__________________________________________
