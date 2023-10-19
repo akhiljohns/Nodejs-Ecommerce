@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 
 db.connect((err) => {
   if (err) {
-    console.log("Connection Error");
+    console.log("Connection Error",err);
   } else {
     console.log('Database Connected Successfully');
   }
