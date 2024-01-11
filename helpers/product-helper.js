@@ -8,6 +8,7 @@ module.exports = {
     addProducts: (product) => {
         return new Promise((resolve, reject) => {
             db.get().collection(collection.PRODUCT_COLLECTION).insertOne(product).then(async(result) => {
+                console.log(result)
                 let product = await db.get().collection(collection.PRODUCT_COLLECTION).findOne({ _id: ObjectId(result.insertedId) })
                 resolve(product);
             })
