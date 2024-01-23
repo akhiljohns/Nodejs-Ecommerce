@@ -6,6 +6,7 @@ const { ObjectId } = require('mongodb');
 module.exports = {
     findUsers: async () => {
         let users = await db.get().collection(collection.USER_COLLECTION).find({}).toArray();
+        console.log(users)
         return users;
     },
 
