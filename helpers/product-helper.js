@@ -23,7 +23,6 @@ module.exports = {
 
     getProductById: async(id) => {
         let product = await db.get().collection(collection.PRODUCT_COLLECTION).findOne({_id: ObjectId(id)})
-        console.log(product)
         return product;
     },
 
