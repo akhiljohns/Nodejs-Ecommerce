@@ -14,9 +14,10 @@ module.exports = {
             })
         })
     },
-
+    
     showProducts: async() => {
         let products = await db.get().collection(collection.PRODUCT_COLLECTION).find().toArray();
+        console.log(products)
         return products;
     },
 
