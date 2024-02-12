@@ -25,7 +25,6 @@ module.exports = {
     },
 
     updateProduct: async(id, product) => {
-        console.log(product);
         await db.get().collection(collection.PRODUCT_COLLECTION).updateOne({_id: ObjectId(id)},{$set:{name: product.name, description: product.description, image: product.image}});
         return;
         
