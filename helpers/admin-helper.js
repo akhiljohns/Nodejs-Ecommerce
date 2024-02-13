@@ -16,7 +16,6 @@ module.exports = {
 
     getUserById: async (id) => {
         let user = await db.get().collection(collection.USER_COLLECTION).findOne({ _id: ObjectId(id) });
-        console.log(user)
         return user;
     },
 
