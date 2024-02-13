@@ -27,7 +27,6 @@ module.exports = {
     searchUser: async (char) => {
         char = '^' + char;
         let user = await db.get().collection(collection.USER_COLLECTION).find({ $or: [{ name: { $regex: char, $options: "i" } }, { email: { $regex: char, $options: "i" } }] }).toArray()
-        console.log(user)
         return user;
     },
 }
