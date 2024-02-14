@@ -20,15 +20,16 @@ module.exports = {
         console.log(users)
         return user;
     },
-
+    
     updateUser: async (id, user) => {
         await db.get().collection(collection.USER_COLLECTION).updateOne({ _id: ObjectId(id) }, { $set: { name: user.name, email: user.email, username: user.username } });
         return;
     },
-
+    
     searchUser: async (char) => {
         char = '^' + char;
         let user = await db.get().collection(collection.USER_COLLECTION).find({ $or: [{ name: { $regex: char, $options: "i" } }, { email: { $regex: char, $options: "i" } }] }).toArray()
+        console.log(users)
         return user;
     },
 }
