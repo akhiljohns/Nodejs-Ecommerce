@@ -12,12 +12,12 @@ module.exports = {
 
     deleteUser: async (id) => {
         await db.get().collection(collection.USER_COLLECTION).deleteOne({ _id: ObjectId(id) });
-        console.log(users)
         return;
     },
     
     getUserById: async (id) => {
         let user = await db.get().collection(collection.USER_COLLECTION).findOne({ _id: ObjectId(id) });
+        console.log(user)
         return user;
     },
     
