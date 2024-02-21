@@ -17,7 +17,9 @@ module.exports = {
     
     showProducts: async() => {
         let products = await db.get().collection(collection.PRODUCT_COLLECTION).find().toArray();
+        console.log(product)
         return products;
+
     },
 
     getProductById: async(id) => {
