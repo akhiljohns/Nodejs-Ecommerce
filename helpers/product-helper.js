@@ -9,7 +9,6 @@ module.exports = {
         return new Promise((resolve, reject) => {
             db.get().collection(collection.PRODUCT_COLLECTION).insertOne(product).then(async(result) => {
                 let product = await db.get().collection(collection.PRODUCT_COLLECTION).findOne({ _id: ObjectId(result.insertedId) })
-                console.log(product)
                 resolve(product);
             })
         })
