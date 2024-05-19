@@ -41,6 +41,7 @@ module.exports = {
 
     checkUsername: (user) => {
         let registerd = db.get().collection(collection.USER_COLLECTION).findOne({ username: user});
+        console.log(registerd)
         return registerd;
     },
 
